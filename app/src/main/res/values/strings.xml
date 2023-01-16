@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">kotlin_ED_DC</string>
+    <string name="bot_n">Botón</string>
+    <string name="contador_0">Contador: 0</string>
 </resources>
