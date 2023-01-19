@@ -23,11 +23,7 @@ class MainActivity : AppCompatActivity() {
         updateContadorText();
 
         // Eventos
-        bSumar.setOnClickListener(object : View.OnClickListener {
-            override fun onClick(v: View?) {
-                contador++; updateContadorText();
-            }
-        })
+        bSumar.setOnClickListener { contador++; updateContadorText(); }
     }
 
     fun updateContadorText() {
