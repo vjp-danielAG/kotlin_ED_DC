@@ -11,6 +11,7 @@ class MainActivity : AppCompatActivity() {
     // Hay que poner lateinit para decirle que no inicialice las variable
     lateinit var bAniadirElemento: Button;
     lateinit var bEliminarElemento: Button;
+    lateinit var bSiguienteElemento: Button;
 
     lateinit var _listNumbers: List<Int>;
     lateinit var _mapNumbers: Map<Int,String>;
@@ -23,13 +24,9 @@ class MainActivity : AppCompatActivity() {
         // Extraer Views
 
 
+
         // Eventos
 
     }
-
-    fun updateContadorText() {
-        tvContador.text = "Contador: $contador";
-    }
-
 
 }
