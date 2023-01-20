@@ -10,4 +10,6 @@
     <string name="lista">Lista</string>
     <string name="set">Set</string>
     <string name="mapa">Mapa</string>
+    <string name="mensaje">Mensaje</string>
+    <string name="autor">Autor</string>
 </resources>

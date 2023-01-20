@@ -95,7 +95,8 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.317" />
+        app:layout_constraintVertical_bias="0.317"
+        android:autofillHints="" />
 
     <RadioButton
         android:id="@+id/rbList"
@@ -133,5 +134,36 @@
         app:layout_constraintStart_toStartOf="@+id/guideline50V"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.921" />
+
+    <EditText
+        android:id="@+id/etAutor"
+        android:layout_width="157dp"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:gravity="center"
+        android:inputType="textPersonName"
+        android:text="@string/autor"
+        app:layout_constraintBottom_toTopOf="@+id/guideline50H"
+        app:layout_constraintEnd_toStartOf="@+id/guideline50V"
+        app:layout_constraintHorizontal_bias="0.653"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.079" />
+
+    <EditText
+        android:id="@+id/etMensaje"
+        android:layout_width="170dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:gravity="center"
+        android:inputType="textPersonName"
+        android:text="@string/mensaje"
+        app:layout_constraintBottom_toTopOf="@+id/guideline50H"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.542"
+        app:layout_constraintStart_toStartOf="@+id/guideline50V"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
