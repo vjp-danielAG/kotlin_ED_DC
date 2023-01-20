@@ -9,21 +9,22 @@ import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
     // Hay que poner lateinit para decirle que no inicialice las variable
-    lateinit var bSumar: Button;
-    lateinit var tvContador: TextView;
-    var contador = 0;
+    lateinit var bAniadirElemento: Button;
+    lateinit var bEliminarElemento: Button;
+
+    lateinit var _listNumbers: List<Int>;
+    lateinit var _mapNumbers: Map<Int,String>;
+    lateinit var _setNumbers: Set<Int>;
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         // Extraer Views
-        bSumar = findViewById<Button>(R.id.bSumar);
-        tvContador = findViewById<TextView>(R.id.tvMostrarValor);
-        updateContadorText();
+
 
         // Eventos
-        bSumar.setOnClickListener { contador++; updateContadorText(); }
+
     }
 
     fun updateContadorText() {
