@@ -1,5 +1,15 @@
 <resources>
     <string name="app_name">kotlin_ED_DC</string>
     <string name="bot_n">Botón</string>
-    <string name="contador_0">Contador: 0</string>
+    <string name="eliminar">Eliminar</string>
+    <string name="a_adir">Añadir</string>
+    <string name="elemento">Elemento</string>
+    <string name="input">Input</string>
+    <string name="Anterior"><![CDATA[<]]></string>
+    <string name="Siguiente"><![CDATA[>]]></string>
+    <string name="lista">Lista</string>
+    <string name="set">Set</string>
+    <string name="mapa">Mapa</string>
+    <string name="mensaje">Mensaje</string>
+    <string name="autor">Autor</string>
 </resources>

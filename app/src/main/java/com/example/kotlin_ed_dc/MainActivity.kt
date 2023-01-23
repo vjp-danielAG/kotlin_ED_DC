@@ -18,6 +18,7 @@ class MainActivity : AppCompatActivity() {
     // Hay que poner lateinit para decirle que no inicialice las variable
     lateinit var bAniadirElemento: Button;
     lateinit var bEliminarElemento: Button;
+    lateinit var bSiguienteElemento: Button;
 
     lateinit var tvAutor: TextView;
     lateinit var tvText: TextView;
@@ -31,6 +32,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         // Extraer Views
+
 
 
         // Eventos
