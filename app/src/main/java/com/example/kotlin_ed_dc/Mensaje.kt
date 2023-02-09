@@ -1,8 +1,8 @@
 package com.example.kotlin_ed_dc
 
 data class MensajeDC(
-    var texto: String = "",
     var autor: String = "",
+    var texto: String = "",
 );
 
 class Mensaje {
