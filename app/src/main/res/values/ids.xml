@@ -7,9 +7,10 @@
     <item name="btAnt" type="id" />
     <item name="tvElementoMostrar" type="id" />
     <item name="etInputUsuario" type="id" />
+    <item name="rgroupDataStruct" type="id" />
     <item name="rbList" type="id" />
     <item name="rbSet" type="id" />
-    <item name="rbMapa" type="id" />
+    <item name="rbMap" type="id" />
     <item name="etAutor" type="id" />
     <item name="etMensaje" type="id" />
     <item name="btSig" type="id" />
