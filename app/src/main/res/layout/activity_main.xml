@@ -29,21 +29,18 @@
         app:layout_constraintEnd_toStartOf="@+id/guideline50V"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline50H"
-        app:layout_constraintVertical_bias="0.422" />
+        app:layout_constraintVertical_bias="0.3" />
 
     <Button
         android:id="@+id/btEliminar"
         android:layout_width="120dp"
         android:layout_height="50dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginBottom="240dp"
         android:text="@string/eliminar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline50V"
-        app:layout_constraintHorizontal_bias="0.258"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline50H"
-        app:layout_constraintVertical_bias="0.786" />
+        app:layout_constraintVertical_bias="0.1" />
 
     <Button
         android:id="@+id/btSig"
@@ -55,7 +52,7 @@
         app:layout_constraintHorizontal_bias="0.865"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline50H"
-        app:layout_constraintVertical_bias="0.777" />
+        app:layout_constraintVertical_bias="0.5" />
 
     <Button
         android:id="@+id/btAnt"
@@ -68,7 +65,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline50H"
-        app:layout_constraintVertical_bias="0.776" />
+        app:layout_constraintVertical_bias="0.5" />
 
     <TextView
         android:id="@+id/tvElementoMostrar"

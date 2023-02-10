@@ -22,6 +22,7 @@ class MainActivity : AppCompatActivity() {
     var listMensajes: ArrayList<MensajeDC>   = ArrayList()
     var setMensajes:  HashSet<MensajeDC>     = HashSet()
     var mapMensajes:  HashMap<Int,MensajeDC> = HashMap()
+    var mapIndex: Int = 0
 
     var iMsg: Int = 0
 
@@ -42,7 +43,9 @@ class MainActivity : AppCompatActivity() {
 
         // Eventos
         btnAdd.setOnClickListener { addMensaje() }
-        rgroupDataStruct.setOnCheckedChangeListener { _, checkedId -> loadMensajes(checkedId) }
+        btnNext.setOnClickListener { desplazar(+1) }
+        btnPrev.setOnClickListener { desplazar(-1) }
+        rgroupDataStruct.setOnCheckedChangeListener { _, _ -> loadMensajes() }
     }
 
     private fun addMensaje() {
@@ -51,24 +54,50 @@ class MainActivity : AppCompatActivity() {
 
         when (rgroupDataStruct.checkedRadioButtonId) {
             R.id.rbList -> listMensajes.add(msg)
-            R.id.rbSet -> setMensajes.add(msg)
-            R.id.rbMap -> mapMensajes.set(mapMensajes.size, msg)
+            R.id.rbSet  -> setMensajes.add(msg)
+            R.id.rbMap  -> mapMensajes[mapIndex++] = msg
         }
+
+        mostrarMsg()
     }
 
-    private fun loadMensajes(checkedId: Int) {
-        // Reiniciar indice mensajes
-        iMsg = 0; var msg: MensajeDC? = null;
+    private fun loadMensajes() {
+        // Reiniciar indice mensajes y mostrar primero
+        this.iMsg = 0; mostrarMsg()
+    }
+
+    private fun desplazar(inc: Int) {
+        iMsg += inc; // Puede ser +1 (derecha) o -1 (izquierda)
+        // Sacar la longitud
+        val size = when (rgroupDataStruct.checkedRadioButtonId) {
+            R.id.rbList -> listMensajes.size
+            R.id.rbSet  -> setMensajes.size
+            R.id.rbMap  -> mapMensajes.size
+            else        -> 0
+        }
+
+        // Loopear iMsg a la longitud del
+        try {
+            iMsg %= size;
+            if (iMsg < 0) iMsg += size; // Si es negativo, vamos "por el final"
+        } catch (e:ArithmeticException) { iMsg = 0; }
+
+        // Mostrar mensaje correspondiente
+        mostrarMsg()
+    }
+
+    private fun mostrarMsg() {
+        var msg: MensajeDC? = null;
         // Cargar primer mensaje de la estructura de datos
-        when (checkedId) {
-            R.id.rbList -> msg = listMensajes.firstOrNull()
-            R.id.rbSet -> msg = setMensajes.firstOrNull()
+        when (rgroupDataStruct.checkedRadioButtonId) {
+            R.id.rbList -> msg = listMensajes.getOrNull(iMsg)
+            R.id.rbSet -> msg = setMensajes.elementAtOrNull(iMsg)
             R.id.rbMap -> {
-                val key = mapMensajes.keys.firstOrNull()
+                val key = mapMensajes.keys.elementAtOrNull(iMsg)
                 msg = mapMensajes.getOrDefault(key, null)
             }
         }
-
+        Log.i("MainActivity.mostrarMsg()", "i: $iMsg")
         tvMostrar.text = msg?.toString() ?: getString(R.string.elemento)
     }
 
