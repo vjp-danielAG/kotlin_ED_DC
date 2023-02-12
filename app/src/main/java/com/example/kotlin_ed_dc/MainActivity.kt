@@ -43,6 +43,7 @@ class MainActivity : AppCompatActivity() {
 
         // Eventos
         btnAdd.setOnClickListener { addMensaje() }
+        btnRemove.setOnClickListener { eliminarMsg() }
         btnNext.setOnClickListener { desplazar(+1) }
         btnPrev.setOnClickListener { desplazar(-1) }
         rgroupDataStruct.setOnCheckedChangeListener { _, _ -> loadMensajes() }
@@ -88,7 +89,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun mostrarMsg() {
         var msg: MensajeDC? = null;
-        // Cargar primer mensaje de la estructura de datos
+        // Cargar mensaje de la estructura de datos
         when (rgroupDataStruct.checkedRadioButtonId) {
             R.id.rbList -> msg = listMensajes.getOrNull(iMsg)
             R.id.rbSet -> msg = setMensajes.elementAtOrNull(iMsg)
@@ -99,6 +100,25 @@ class MainActivity : AppCompatActivity() {
         }
         Log.i("MainActivity.mostrarMsg()", "i: $iMsg")
         tvMostrar.text = msg?.toString() ?: getString(R.string.elemento)
+    }
+    private fun eliminarMsg() {
+        var msg: MensajeDC? = null;
+        // Buscar el mensaje seleccionado y borrarlo
+        when (rgroupDataStruct.checkedRadioButtonId) {
+            R.id.rbList -> {
+                msg = listMensajes.getOrNull(iMsg)
+                listMensajes.remove(msg)
+            }
+            R.id.rbSet -> {
+                msg = setMensajes.elementAtOrNull(iMsg)
+                setMensajes.remove(msg)
+            }
+            R.id.rbMap -> {
+                val key = mapMensajes.keys.elementAtOrNull(iMsg)
+                mapMensajes.remove(key)
+            }
+        }
+        mostrarMsg()
     }
 
     private fun clearFields() {
